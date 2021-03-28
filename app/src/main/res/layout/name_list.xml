@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    android:orientation="vertical">
+
+    <RelativeLayout
+       android:background="@color/design_default_color_secondary_variant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:layout_margin="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="4dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/idimageset"
+            android:layout_width="120dp"
+            android:layout_height="90dp"
+            android:padding="2dp" />
+
+        <TextView
+            android:id="@+id/idtextViewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/idimageset"
+            android:text="wiki"
+            android:textStyle="bold"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/iddescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idtextViewName"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/idimageset"
+            android:text="he is seller"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+        <TextView
+            android:id="@+id/idgpa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iddescription"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/idimageset"
+            android:background="@color/cardview_shadow_start_color"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="4.00"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/idmobileno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idgpa"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            android:layout_toRightOf="@id/idimageset"
+            android:text="03008934340"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+    </RelativeLayout>
+
+</LinearLayout>
