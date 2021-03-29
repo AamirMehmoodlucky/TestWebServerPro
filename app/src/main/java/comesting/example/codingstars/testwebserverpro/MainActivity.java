@@ -23,7 +23,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String URL_PRODUCTS = "https://jobpakistandaily.000webhostapp.com/webserver/webServerTask.php";
-    List<model> productList;
+    List<model> dataList;
     RecyclerView recyclerView;
 
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recylcerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        productList = new ArrayList<>();
+        dataList = new ArrayList<>();
         loadProducts();
     }
 
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                                 JSONObject product = array.getJSONObject(i);
 
 
-                                productList.add(new model(
+                                dataList.add(new model(
                                         product.getInt("id"),
                                         product.getString("name"),
                                         product.getString("shortdes"),
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                             }
 
 
-                            ProfileAdapter adapter = new ProfileAdapter(MainActivity.this, productList);
+                            ProfileAdapter adapter = new ProfileAdapter(MainActivity.this, dataList);
                             recyclerView.setAdapter(adapter);
                         } catch (JSONException e) {
                             e.printStackTrace();
