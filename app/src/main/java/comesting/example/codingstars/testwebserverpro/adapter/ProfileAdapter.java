@@ -1,12 +1,10 @@
-package comesting.example.codingstars.testwebserverpro;
+package comesting.example.codingstars.testwebserverpro.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -14,9 +12,11 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import comesting.example.codingstars.testwebserverpro.R;
+import comesting.example.codingstars.testwebserverpro.model.model;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder> {
+public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder> {
 
 
     private final Context mCtx;

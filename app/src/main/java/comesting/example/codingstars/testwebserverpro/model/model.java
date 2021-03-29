@@ -1,4 +1,4 @@
-package comesting.example.codingstars.testwebserverpro;
+package comesting.example.codingstars.testwebserverpro.model;
 
 public class model {
     private int id;

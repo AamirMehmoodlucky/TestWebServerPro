@@ -3,10 +3,10 @@ package comesting.example.codingstars.testwebserverpro;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import comesting.example.codingstars.testwebserverpro.adapter.ProfileAdapter;
+import comesting.example.codingstars.testwebserverpro.model.model;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //getting the recyclerview from xml
+
         recyclerView = findViewById(R.id.recylcerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
