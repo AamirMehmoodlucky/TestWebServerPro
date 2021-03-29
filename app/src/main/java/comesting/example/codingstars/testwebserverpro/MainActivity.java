@@ -35,12 +35,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recylcerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        //initializing the productlist
         productList = new ArrayList<>();
-
-        //this method will fetch and parse json
-        //to display it in recyclerview
         loadProducts();
     }
 

@@ -12,22 +12,24 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder> {
 
 
-    private Context mCtx;
-    private List<model> productList;
+    private final Context mCtx;
+    private final List<model> allDataList;
 
-    public ProfileAdapter(Context mCtx, List<model> productList) {
+    public ProfileAdapter(Context mCtx, List<model> list) {
         this.mCtx = mCtx;
-        this.productList = productList;
+        this.allDataList = list;
     }
 
+    @NonNull
     @Override
-    public ProfileViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ProfileViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.name_list, null);
         return new ProfileViewHolder(view);
@@ -35,24 +37,24 @@ class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileViewHold
 
     @Override
     public void onBindViewHolder(ProfileViewHolder holder, int position) {
-        model product = productList.get(position);
+        model list = allDataList.get(position);
         Glide.with(mCtx)
-                .load(product.getImage())
+                .load(list.getImage())
                 .into(holder.imageView);
 
-        holder.tvName.setText(product.getName());
-        holder.tvDes.setText(product.getShortdesc());
-        holder.tvCGPA.setText("CGPA:" + String.valueOf(product.getCgpa()));
-        holder.tvMobileno.setText(String.valueOf(product.getMobilenum()));
+        holder.tvName.setText(list.getName());
+        holder.tvDes.setText(list.getShortdesc());
+        holder.tvCGPA.setText("CGPA:" + list.getCgpa());
+        holder.tvMobileno.setText(String.valueOf(list.getMobilenum()));
 
     }
 
     @Override
     public int getItemCount() {
-        return productList.size();
+        return allDataList.size();
     }
 
-    class ProfileViewHolder extends RecyclerView.ViewHolder {
+     class ProfileViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvName, tvDes, tvCGPA, tvMobileno;
         CircleImageView imageView;
